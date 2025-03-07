@@ -9,4 +9,5 @@
     <string name="red_light_desc">Red traffic light</string>
     <string name="orange_light_desc">Orange traffic light</string>
     <string name="green_light_desc">Green traffic light</string>
+    <string name="car_model_must_be_at_least_3_characters_long">Car model must be at least 3 characters long</string>
 </resources> 

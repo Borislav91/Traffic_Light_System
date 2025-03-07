@@ -8,8 +8,7 @@ import com.borislav.trafficlightsystemxml.domain.usecase.GetTrafficLightStateUse
 import com.borislav.trafficlightsystemxml.domain.usecase.TrafficLightStateCallback
 
 class TrafficLightViewModel(
-    private val getTrafficLightStateUseCase: GetTrafficLightStateUseCase,
-    val carModel: String
+    private val getTrafficLightStateUseCase: GetTrafficLightStateUseCase
 ) : ViewModel(), TrafficLightStateCallback {
 
     private val _currentState = MutableLiveData<TrafficLightState>()

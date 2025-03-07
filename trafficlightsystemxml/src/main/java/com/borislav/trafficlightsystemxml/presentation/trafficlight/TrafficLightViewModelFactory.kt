@@ -12,7 +12,7 @@ class TrafficLightViewModelFactory(
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(TrafficLightViewModel::class.java)) {
-            return TrafficLightViewModel(getTrafficLightStateUseCase, carModel) as T
+            return TrafficLightViewModel(getTrafficLightStateUseCase) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

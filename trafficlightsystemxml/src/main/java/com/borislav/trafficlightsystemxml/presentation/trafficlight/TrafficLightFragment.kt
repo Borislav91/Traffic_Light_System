@@ -63,7 +63,6 @@ class TrafficLightFragment : Fragment() {
     }
     
     private fun updateTrafficLights(state: TrafficLightState) {
-        // Animate alpha changes for smooth transitions
         animateLight(binding.ivRedLight, state == TrafficLightState.RED)
         animateLight(binding.ivOrangeLight, state == TrafficLightState.ORANGE)
         animateLight(binding.ivGreenLight, state == TrafficLightState.GREEN)

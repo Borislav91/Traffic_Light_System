@@ -37,7 +37,10 @@ class CarInputFragment : Fragment() {
     }
     
     private fun setupViewModel() {
-        val factory = CarInputViewModelFactory(ServiceLocator.provideValidateCarModelUseCase())
+        val factory = CarInputViewModelFactory(
+            requireActivity().application,
+            ServiceLocator.provideValidateCarModelUseCase()
+        )
         viewModel = ViewModelProvider(this, factory)[CarInputViewModel::class.java]
     }
     

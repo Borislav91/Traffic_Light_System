@@ -1,13 +1,16 @@
 package com.borislav.trafficlightsystemxml.presentation.carinput
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import com.borislav.trafficlightsystemxml.R
 import com.borislav.trafficlightsystemxml.domain.usecase.ValidateCarModelUseCase
 
 class CarInputViewModel(
-    private val validateCarModelUseCase: ValidateCarModelUseCase
-) : ViewModel() {
+    application: Application,
+    private val validateCarModelUseCase: ValidateCarModelUseCase,
+) : AndroidViewModel(application) {
 
     private val _carModel = MutableLiveData("")
     val carModel: LiveData<String> = _carModel
@@ -30,7 +33,9 @@ class CarInputViewModel(
         
         if (!isValid) {
             _isError.value = true
-            _errorMessage.value = "Car model must be at least 3 characters long"
+            _errorMessage.value = getApplication<Application>().getString(
+                R.string.car_model_must_be_at_least_3_characters_long
+            )
         }
         
         return isValid
