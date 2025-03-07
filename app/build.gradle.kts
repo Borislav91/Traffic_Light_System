@@ -68,6 +68,17 @@ dependencies {
     
     // Testing
     testImplementation(libs.junit)
+    
+    // Mockito for mocking in tests
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.kotlin)
+    
+    // Coroutines testing
+    testImplementation(libs.kotlinx.coroutines.test)
+    
+    // AndroidX testing
+    testImplementation(libs.androidx.arch.core.testing)
+    
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
