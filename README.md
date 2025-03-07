@@ -58,13 +58,6 @@ This module demonstrates a traditional Android development approach using single
 - **State Management**: LiveData for observable UI states
 - **Navigation**: Jetpack Navigation Component with SafeArgs
 
-## Common Components
-
-Both modules share:
-- **Domain Models**: Common models like TrafficLightState and CarModel
-- **Use Cases**: Business logic encapsulated in use cases
-- **Testing Framework**: JUnit, Mockito, and coroutines testing utilities
-
 ## Getting Started
 Run either the `app` module or the `trafficlightsystemxml` module on an emulator or physical device.
 
