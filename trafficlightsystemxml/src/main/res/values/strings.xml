@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Traffic Light System XML</string>
+    <string name="car_model_hint">Enter your car model</string>
+    <string name="enter_car_model">Enter Your Car Model</string>
+    <string name="start_driving">Start Driving</string>
+    <string name="error_car_model_length">Car model must be at least 3 characters long</string>
+    <string name="car_model_display">Car Model: %s</string>
+    <!-- Accessibility descriptions -->
+    <string name="red_light_desc">Red traffic light</string>
+    <string name="orange_light_desc">Orange traffic light</string>
+    <string name="green_light_desc">Green traffic light</string>
+</resources> 

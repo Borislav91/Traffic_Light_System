@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/carInputFragment">
+
+    <fragment
+        android:id="@+id/carInputFragment"
+        android:name="com.borislav.trafficlightsystemxml.presentation.carinput.CarInputFragment"
+        android:label="Car Input"
+        tools:layout="@layout/fragment_car_input">
+        <action
+            android:id="@+id/action_carInputFragment_to_trafficLightFragment"
+            app:destination="@id/trafficLightFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/trafficLightFragment"
+        android:name="com.borislav.trafficlightsystemxml.presentation.trafficlight.TrafficLightFragment"
+        android:label="Traffic Light"
+        tools:layout="@layout/fragment_traffic_light">
+        <argument
+            android:name="carModel"
+            app:argType="string" />
+    </fragment>
+
+</navigation> 
