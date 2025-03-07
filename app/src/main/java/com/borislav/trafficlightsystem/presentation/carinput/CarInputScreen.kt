@@ -16,11 +16,13 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.borislav.trafficlightsystem.R
 
 @Composable
 fun CarInputScreen(
@@ -38,7 +40,7 @@ fun CarInputScreen(
             verticalArrangement = Arrangement.Center
         ) {
             Text(
-                text = "Enter Your Car Model",
+                text = stringResource(R.string.car_input_title),
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold
             )
@@ -48,7 +50,7 @@ fun CarInputScreen(
             OutlinedTextField(
                 value = state.carModel,
                 onValueChange = { viewModel.handleAction(CarInputAction.OnCarModelChange(it)) },
-                label = { Text("Car Model") },
+                label = { Text(stringResource(R.string.car_input_field_label)) },
                 isError = state.isError,
                 supportingText = {
                     if (state.isError) {
@@ -69,7 +71,7 @@ fun CarInputScreen(
                 },
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text("Start Driving")
+                Text(stringResource(R.string.car_input_button_start))
             }
         }
     }

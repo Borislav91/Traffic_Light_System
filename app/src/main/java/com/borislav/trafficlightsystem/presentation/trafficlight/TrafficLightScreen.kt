@@ -20,11 +20,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.borislav.trafficlightsystem.R
 import com.borislav.trafficlightsystem.domain.model.TrafficLightState
+import com.borislav.trafficlightsystem.ui.theme.TrafficLightGreen
+import com.borislav.trafficlightsystem.ui.theme.TrafficLightOrange
+import com.borislav.trafficlightsystem.ui.theme.TrafficLightRed
 
 @Composable
 fun TrafficLightScreen(
@@ -41,7 +46,7 @@ fun TrafficLightScreen(
             verticalArrangement = Arrangement.Center
         ) {
             Text(
-                text = "Car Model: ${state.carModel}",
+                text = stringResource(R.string.traffic_light_car_model, state.carModel),
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold
             )
@@ -64,21 +69,21 @@ fun TrafficLightView(currentLight: TrafficLightState) {
             animationSpec = tween(durationMillis = 500),
             label = "redAlpha"
         )
-        TrafficLight(color = Color.Red, alpha = redAlpha)
+        TrafficLight(color = TrafficLightRed, alpha = redAlpha)
 
         val orangeAlpha by animateFloatAsState(
             targetValue = if (currentLight == TrafficLightState.ORANGE) 1f else 0.3f,
             animationSpec = tween(durationMillis = 500),
             label = "orangeAlpha"
         )
-        TrafficLight(color = Color(0xFFFFA500), alpha = orangeAlpha)
+        TrafficLight(color = TrafficLightOrange, alpha = orangeAlpha)
 
         val greenAlpha by animateFloatAsState(
             targetValue = if (currentLight == TrafficLightState.GREEN) 1f else 0.3f,
             animationSpec = tween(durationMillis = 500),
             label = "greenAlpha"
         )
-        TrafficLight(color = Color.Green, alpha = greenAlpha)
+        TrafficLight(color = TrafficLightGreen, alpha = greenAlpha)
     }
 }
 

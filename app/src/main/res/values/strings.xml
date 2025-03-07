@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Traffic Light System</string>
+    
+    <!-- Car Input Screen -->
+    <string name="car_input_title">Enter Your Car Model</string>
+    <string name="car_input_field_label">Car Model</string>
+    <string name="car_input_button_start">Start Driving</string>
+    
+    <!-- Traffic Light Screen -->
+    <string name="traffic_light_car_model">Car Model: %1$s</string>
 </resources>
